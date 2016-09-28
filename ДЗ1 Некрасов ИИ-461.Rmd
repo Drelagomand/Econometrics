@@ -1,0 +1,35 @@
+---
+title: "DZ1"
+author: "Nekrasov Alexander"
+date: '29 сентября 2016 г '
+output: html_document
+---
+
+Miles <- c
+(1211,1345,1422,1687,1849,2026,2133,2253,2400,2468,2699,2806,3082,3209,3466,3643,3852,
+4033,4267,4498,4533,4804,5090,5233,5439)
+Costs <- c
+(1802,2405,2005,2511,2332,2305,3016,3385,3090,3694,3371,3998,3555,4692,4244,5298,4801,
+5147,5738,6420,6059,6426,6321,7026,6964)
+AmericanExpress<-data.frame(Miles, Costs)
+
+summary(AmericanExpress)
+sd(AmericanExpress$Miles)
+sd(AmericanExpress$Costs)
+pairs(AmericanExpress)
+
+boxplot(AmericanExpress)
+
+hist(AmericanExpress$Miles, freq=FALSE, xlab="Miles", ylab="Costs", main="Гистограмма 
+с наложением функции плотности нормального распределения и ядерной оценкой плотности")
+rug(jitter(AmericanExpress$Miles))
+lines(density(AmericanExpress$Miles), col="red", lwd=2)
+
+hist(AmericanExpress$Costs, freq=FALSE, xlab="Miles", ylab="Сosts", main="Гистограмма 
+с наложением функции плотности нормального распределения и ядерной оценкой плотности")
+rug(jitter(AmericanExpress$Costs))
+lines(density(AmericanExpress$Costs), col="red", lwd=2)
+
+plot(AmericanExpress$Costs, AmericanExpress$Miles)
+
+cor(AmericanExpress)
